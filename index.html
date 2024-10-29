@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration and Profile Form</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="form-section">
+        <div class="container">
+          <h2>Create an Account</h2>
+          <form id="registration-form" method="post">
+            <div class="form-group">
+              <div class="form-name">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first_name" required />
+              </div>
+              <div class="form-name">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last_name" required />
+              </div>
+            </div>
+            <div class="form-full-item">
+              <div class="form-name">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required />
+                <small>We'll never share your email with anyone else.</small>
+              </div>
+            </div>
+            <div class="radio-group">
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="male"
+                required
+              />
+              <label for="male">Male</label>
+              <input type="radio" id="female" name="gender" value="female" />
+              <label for="female">Female</label>
+            </div>
+            <div class="form-group">
+              <div class="form-name">
+                <label for="country">Country</label>
+                <select id="country">
+                  <option></option>
+
+                  <option value="AL">Albania</option>
+                  <option value="AD">Andorra</option>
+                  <option value="AM">Armenia</option>
+                  <option value="AT">Austria</option>
+                  <option value="BY">Belarus</option>
+                  <option value="BE">Belgium</option>
+                  <option value="BA">Bosnia and Herzegovina</option>
+                  <option value="BG">Bulgaria</option>
+                  <option value="HR">Croatia</option>
+                  <option value="CY">Cyprus</option>
+                  <option value="CZ">Czech Republic</option>
+                  <option value="DK">Denmark</option>
+                  <option value="EE">Estonia</option>
+                  <option value="FI">Finland</option>
+                  <option value="FR">France</option>
+                  <option value="GE">Georgia</option>
+                  <option value="DE">Germany</option>
+                  <option value="GR">Greece</option>
+                  <option value="HU">Hungary</option>
+                  <option value="IS">Iceland</option>
+                  <option value="IE">Ireland</option>
+                  <option value="IT">Italy</option>
+                  <option value="KZ">Kazakhstan</option>
+                  <option value="LV">Latvia</option>
+                  <option value="LI">Liechtenstein</option>
+                  <option value="LT">Lithuania</option>
+                  <option value="LU">Luxembourg</option>
+                  <option value="MT">Malta</option>
+                  <option value="MD">Moldova</option>
+                  <option value="MC">Monaco</option>
+                  <option value="ME">Montenegro</option>
+                  <option value="NL">Netherlands</option>
+                  <option value="MK">North Macedonia</option>
+                  <option value="NO">Norway</option>
+                  <option value="PL">Poland</option>
+                  <option value="PT">Portugal</option>
+                  <option value="RO">Romania</option>
+                  <option value="SM">San Marino</option>
+                  <option value="RS">Serbia</option>
+                  <option value="SK">Slovakia</option>
+                  <option value="SI">Slovenia</option>
+                  <option value="ES">Spain</option>
+                  <option value="SE">Sweden</option>
+                  <option value="CH">Switzerland</option>
+                  <option value="UA">Ukraine</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="VA">Vatican City</option>
+                </select>
+              </div>
+              <div class="form-name">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required />
+              </div>
+            </div>
+
+            <button type="submit">Sign Up</button>
+            <div class="footer">
+              <p>
+                By clicking the 'Sign Up' button, you confirm that you accept
+                our
+                <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+              </p>
+              <hr />
+              <p class="have">Have an account? <a href="#">Log In</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <div class="container">
+          <h2>Profile</h2>
+
+          <form id="profile-form" method="post">
+            <div class="profile-container">
+              <img
+                src="assets/images/image.png"
+                alt="Profile Picture"
+                class="profile-picture"
+                id="profile-picture"
+              />
+              <div class="file-upload">
+                <input
+                  type="file"
+                  id="file-input"
+                  class="file-input"
+                  accept="image/*"
+                />
+                <label for="file-input" class="file-label">
+                  <i class="camera-icon"></i>
+                </label>
+
+                <button class="delete-button" id="delete-button">
+                  <i class="trash-icon"></i>
+                </button>
+
+                <span>Up to 1 MB (300x300 px)</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-name">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-name">
+                <label for="email-profile">E-mail</label>
+                <input type="email" id="email-profile" name="email" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-name">
+                <label for="country">Country</label>
+                <select id="country">
+                  <option></option>
+
+                  <option value="AL">Albania</option>
+                  <option value="AD">Andorra</option>
+                  <option value="AM">Armenia</option>
+                  <option value="AT">Austria</option>
+                  <option value="BY">Belarus</option>
+                  <option value="BE">Belgium</option>
+                  <option value="BA">Bosnia and Herzegovina</option>
+                  <option value="BG">Bulgaria</option>
+                  <option value="HR">Croatia</option>
+                  <option value="CY">Cyprus</option>
+                  <option value="CZ">Czech Republic</option>
+                  <option value="DK">Denmark</option>
+                  <option value="EE">Estonia</option>
+                  <option value="FI">Finland</option>
+                  <option value="FR">France</option>
+                  <option value="GE">Georgia</option>
+                  <option value="DE">Germany</option>
+                  <option value="GR">Greece</option>
+                  <option value="HU">Hungary</option>
+                  <option value="IS">Iceland</option>
+                  <option value="IE">Ireland</option>
+                  <option value="IT">Italy</option>
+                  <option value="KZ">Kazakhstan</option>
+                  <option value="LV">Latvia</option>
+                  <option value="LI">Liechtenstein</option>
+                  <option value="LT">Lithuania</option>
+                  <option value="LU">Luxembourg</option>
+                  <option value="MT">Malta</option>
+                  <option value="MD">Moldova</option>
+                  <option value="MC">Monaco</option>
+                  <option value="ME">Montenegro</option>
+                  <option value="NL">Netherlands</option>
+                  <option value="MK">North Macedonia</option>
+                  <option value="NO">Norway</option>
+                  <option value="PL">Poland</option>
+                  <option value="PT">Portugal</option>
+                  <option value="RO">Romania</option>
+                  <option value="SM">San Marino</option>
+                  <option value="RS">Serbia</option>
+                  <option value="SK">Slovakia</option>
+                  <option value="SI">Slovenia</option>
+                  <option value="ES">Spain</option>
+                  <option value="SE">Sweden</option>
+                  <option value="CH">Switzerland</option>
+                  <option value="UA">Ukraine</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="VA">Vatican City</option>
+                </select>
+              </div>
+              <div class="form-name">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-name">
+                <label for="zip">Zip Code</label>
+                <input type="text" id="zip" name="zip" required />
+              </div>
+              <div class="form-name">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required />
+              </div>
+            </div>
+            <button class="update-btn" type="submit">Update</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      $(document).ready(function () {
+        $("#country")
+          .select2({
+            placeholder: "Select a European country",
+            allowClear: true,
+            width: "100%",
+          })
+          .on("select2:select", function (e) {
+            var selectedCountry = e.params.data.text;
+            $("#selectedCountry").val(selectedCountry);
+          })
+          .on("select2:clear", function () { 
+            $("#selectedCountry").val("");
+          });
+
+        $("#selectedCountry").on("click", function () {
+          $("#country").select2("open");
+        });
+      });
+
+      const fileInput = document.getElementById("file-input");
+      const profilePicture = document.getElementById("profile-picture");
+      const deleteButton = document.getElementById("delete-button");
+
+      fileInput.addEventListener("change", function () {
+        const file = fileInput.files[0];
+        if (file && file.size <= 1 * 1024 * 1024) {
+          const reader = new FileReader();
+
+          reader.onload = function (e) {
+            profilePicture.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        } else {
+          alert("Файл слишком большой! Выберите файл размером до 1 МБ.");
+          fileInput.value = "";
+        }
+      });
+
+      deleteButton.addEventListener("click", function () {
+        profilePicture.src = "../assets/images/image.png";
+        fileInput.value = "";
+      });
+    </script>
+  </body>
+</html>
