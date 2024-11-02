@@ -56,12 +56,26 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="tel"],
-input[type="file"],
-select {
+input[type="file"] {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 100%;
+  height: 36px;
+}
+
+.country-select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  height: 36px;
+  appearance: none;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="15" viewBox="0 0 10 15"><path d="M5 0L0 5h10L5 0zM5 15L0 10h10L5 15z" fill="%23545454"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
 }
 
 .select2-container .select2-results__options {
@@ -70,11 +84,12 @@ select {
 }
 
 .select2-container .select2-selection--single .select2-selection__rendered {
-  line-height: 30px;
-  align-items: center;
+  color: #ccc;
 }
+
 .select2-container .select2-selection--single {
-  height: 38px;
+  height: 36px;
+  border-color: #ccc;
 }
 
 small {
@@ -132,8 +147,20 @@ button:hover {
   margin-left: 10px;
 }
 
-.radio-group input[type="radio"] {
+.radio-option {
+  display: flex;
+  align-items: center;
+}
+
+.radio-option input[type="radio"] {
   margin-right: 5px;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 .footer p {
@@ -212,21 +239,37 @@ button:hover {
 
 .file-input {
   cursor: pointer;
-  display: none;
 }
 
-.file-label {
-  align-items: right;
-  cursor: pointer;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
+.fake-file {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #999;
   border-radius: 4px;
-  background-color: #f9f9f9;
+  position: relative;
+  margin-top: 20px;
+}
+
+.fake-file input {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.camera-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .camera-icon::before {
   content: url("../images/camera.png");
-  align-self: right;
 }
 
 .delete-button {

@@ -45,21 +45,26 @@
               </div>
             </div>
             <div class="radio-group">
-              <input
-                type="radio"
-                id="male"
-                name="gender"
-                value="male"
-                required
-              />
-              <label for="male">Male</label>
-              <input type="radio" id="female" name="gender" value="female" />
-              <label for="female">Female</label>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  required
+                />
+                <label for="male">Male</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="female" name="gender" value="female" />
+                <label for="female">Female</label>
+              </div>
             </div>
+
             <div class="form-group">
               <div class="form-name">
                 <label for="country">Country</label>
-                <select id="country">
+                <select class="country-select">
                   <option></option>
 
                   <option value="AL">Albania</option>
@@ -144,15 +149,17 @@
                 id="profile-picture"
               />
               <div class="file-upload">
-                <input
-                  type="file"
-                  id="file-input"
-                  class="file-input"
-                  accept="image/*"
-                />
-                <label for="file-input" class="file-label">
-                  <i class="camera-icon"></i>
-                </label>
+                <div class="fake-file">
+                  <input
+                    type="file"
+                    id="file-input"
+                    class="file-input"
+                    accept="image/*"
+                  />
+                  <label for="file-input" class="file-label">
+                    <i class="camera-icon"></i>
+                  </label>
+                </div>
 
                 <button class="delete-button" id="delete-button">
                   <i class="trash-icon"></i>
@@ -174,7 +181,7 @@
             <div class="form-group">
               <div class="form-name">
                 <label for="country">Country</label>
-                <select id="country">
+                <select class="country-select">
                   <option></option>
 
                   <option value="AL">Albania</option>
@@ -248,26 +255,6 @@
     </main>
 
     <script>
-      $(document).ready(function () {
-        $("#country")
-          .select2({
-            placeholder: "Select a European country",
-            allowClear: true,
-            width: "100%",
-          })
-          .on("select2:select", function (e) {
-            var selectedCountry = e.params.data.text;
-            $("#selectedCountry").val(selectedCountry);
-          })
-          .on("select2:clear", function () { 
-            $("#selectedCountry").val("");
-          });
-
-        $("#selectedCountry").on("click", function () {
-          $("#country").select2("open");
-        });
-      });
-
       const fileInput = document.getElementById("file-input");
       const profilePicture = document.getElementById("profile-picture");
       const deleteButton = document.getElementById("delete-button");
